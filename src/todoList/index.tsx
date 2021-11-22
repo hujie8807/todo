@@ -11,13 +11,9 @@ class MyTodoList extends Component {
     let todoStore = localStorage.getItem("todoStore");
     if (todoStore) {
       store.initStore(JSON.parse(todoStore));
-      console.log("mount");
-      console.log(JSON.parse(todoStore));
     }
   }
   componentWillUnmount() {
-    console.log("unmount");
-    console.log(JSON.stringify(store.todoStore));
     localStorage.setItem("todoStore", JSON.stringify(store.todoStore));
   }
   render() {
