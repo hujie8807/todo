@@ -7,6 +7,10 @@ import TodoHelper from "./todoHelper";
 
 @observer
 class TodoList extends Component {
+  componentDidUpdate() {
+    localStorage.setItem("todoStore", JSON.stringify(store.todoStore));
+  }
+
   getLists() {
     const todoLists = store.todoStore.todoLists;
     return todoLists.map((list: List, index: number) => {
