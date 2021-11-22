@@ -13,9 +13,7 @@ class MyTodoList extends Component {
       store.initStore(JSON.parse(todoStore));
     }
   }
-  componentWillUnmount() {
-    localStorage.setItem("todoStore", JSON.stringify(store.todoStore));
-  }
+
   render() {
     return (
       <div className="todo-panel">
