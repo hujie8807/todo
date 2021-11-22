@@ -101,7 +101,6 @@ class TodoListStore {
 
   @action
   moveTodo = (todo: Todo, targetListId: number) => {
-    console.log(targetListId);
     let { selectedListId, todoLists } = toJS(this.todoStore);
     const targetListIndex = todoLists.findIndex(
       (item) => item.id === targetListId
