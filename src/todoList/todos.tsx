@@ -7,6 +7,10 @@ import TodoHelper from "./todoHelper";
 
 @observer
 class Todos extends Component {
+  componentDidUpdate() {
+    localStorage.setItem("todoStore", JSON.stringify(store.todoStore));
+  }
+
   getTitle(todoList?: List) {
     if (todoList) {
       return <h2>{todoList.title}</h2>;
